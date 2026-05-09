@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Lighting Controller</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Smart Lighting Scene Controller</h1>
+        <form action="{{ url_for('logout') }}" method="get" style="display: inline;">
+            <button type="submit" class="logout-button">Logout</button>
+        </form>
+    </header>
+
+    <section id="lights-section">
+        <h2>Connected Lights</h2>
+        <ul id="light-list"></ul>
+    </section>
+
+    <section id="scenes-section">
+        <h2>Customize Scenes</h2>
+
+        <div class="scene" id="scene-happy">
+            <h3>Happy</h3>
+            <div class="color-pickers" data-scene="happy"></div>
+            <label for="happy_spotify">Enter Spotify playlist link:</label>
+            <label for="happy_spotify"><input type="tel" id="happy_spotify" name="happy_spotify" required></label>
+            <button class="save-scene" data-scene="happy">Save</button>
+            <button class="trigger-scene" data-scene="happy">Trigger</button>
+        </div>
+
+        <div class="scene" id="scene-focus">
+    <h3>Focus</h3>
+    <div class="color-pickers" data-scene="focus"></div>
+    <label for="focus_spotify">Enter Spotify playlist link:</label>
+    <input type="tel" id="focus_spotify" name="focus_spotify" required>
+    <button class="save-scene" data-scene="focus">Save</button>
+    <button class="trigger-scene" data-scene="focus">Trigger</button>
+</div>
+
+<div class="scene" id="scene-party">
+    <h3>Party</h3>
+    <div class="color-pickers" data-scene="party"></div>
+    <label for="party_spotify">Enter Spotify playlist link:</label>
+    <input type="tel" id="party_spotify" name="party_spotify" required>
+    <button class="save-scene" data-scene="party">Save</button>
+    <button class="trigger-scene" data-scene="party">Trigger</button>
+</div>
+
+    </section>
+
+
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
